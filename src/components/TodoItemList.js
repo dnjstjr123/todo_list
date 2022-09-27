@@ -4,11 +4,12 @@ const TodoItemList = ({ todos, onToggle, onRemove }) => {
   const shouldComponentUpdate = (nextProps, nextState) => {
     return this.props.todos !== nextProps.todos;
   };
-  const todoList = todos.map(({ id, text, checked }) => (
+  const todoList = todos.map(({ id, text, checked, color }) => (
     <TodoItem
       id={id}
       text={text}
       checked={checked}
+      color={color}
       onToggle={onToggle}
       onRemove={onRemove}
       key={id}

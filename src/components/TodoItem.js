@@ -1,6 +1,6 @@
 import "./TodoItem.css";
 
-const TodoItem = ({ text, checked, id, onToggle, onRemove }) => {
+const TodoItem = ({ text, checked, id, color, onToggle, onRemove }) => {
   const shouldComponentUpdate = (nextProps, nextState) => {
     return this.props.checked !== nextProps.checked;
   };
@@ -16,7 +16,7 @@ const TodoItem = ({ text, checked, id, onToggle, onRemove }) => {
       >
         &times;
       </div>
-      <div className={`todo-text ${checked && "checked"}`}>
+      <div style={{ color }} className={`todo-text ${checked && "checked"}`}>
         <div>{text}</div>
       </div>
       {checked && <div className="check-mark">✓</div>}
